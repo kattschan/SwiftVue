@@ -25,8 +25,5 @@ let package = Package(
         .target(
             name: "SwiftVue",
             dependencies: []),
-        .testTarget(
-            name: "SwiftVueTests",
-            dependencies: ["SwiftVue"]),
     ]
 )
