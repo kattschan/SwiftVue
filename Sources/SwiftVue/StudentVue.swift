@@ -92,7 +92,7 @@ extension StudentVue {
         return await makeRequest(method: "Attendance", handle: "PXPWebServices")
     }
     
-    public func getGradebook(reportPeriod: Int? = nil) async -> Result<Gradebook, Error> {
+    public func getGradebook(reportPeriod: Int? = nil) async -> Gradebook {
         var params: [String: String] = [:]
         if let period = reportPeriod {
             params = ["ReportPeriod": "\(period)"]
@@ -263,7 +263,7 @@ extension StudentVue {
         return await makeRequest(method: "Attendance", handle: "PXPWebServices", host: credentials.districtURL, path: "/Service/PXPCommunication.asmx", user: credentials.username, pass: credentials.password)
     }
     
-    static public func getGradebook(_ credentials: Credentials, reportPeriod: Int? = nil) async -> Result<Gradebook, Error> {
+    static public func getGradebook(_ credentials: Credentials, reportPeriod: Int? = nil) async -> Gradebook {
         var params: [String: String] = [:]
         if let period = reportPeriod {
             params = ["ReportPeriod": "\(period)"]
