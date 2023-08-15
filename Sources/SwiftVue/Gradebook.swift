@@ -236,12 +236,10 @@ public class GradebookParser: NSObject, XMLParserDelegate {
         }
     }
     
-    public func parse() -> Result<Gradebook, Error> {
+    public func parse() -> Gradebook {
         parser.parse()
         if let gradebook {
             return .success(gradebook)
-        } else {
-            return .failure(SwiftVueError.xmlParsingError)
         }
     }
 }
