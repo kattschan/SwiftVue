@@ -238,8 +238,6 @@ public class GradebookParser: NSObject, XMLParserDelegate {
     
     public func parse() -> Gradebook {
         parser.parse()
-        if let gradebook {
-            return .success(gradebook)
-        }
+        return .success(gradebook)
     }
 }
